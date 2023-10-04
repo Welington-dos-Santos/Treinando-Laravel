@@ -7,11 +7,8 @@ use Illuminate\Http\Request;
 
 class OrdemController extends Controller
 {
-    public function index($id)
+    public function index()
     {
-        $ordem = Ordem::where('id', $id)->first();
-        dd($ordem);
-
         return view('welcome');
     }
 }
