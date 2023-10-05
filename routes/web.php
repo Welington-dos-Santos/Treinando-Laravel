@@ -20,6 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('users/usuario', [UserController::class], 'index')->name('usuario.index');
+Route::get('/users/usuario', [UserController::class, 'index'])->name('usuario.index');
+Route::get('/users/create', [UserController::class, 'create'])->name('usuario.create');
+Route::post('/users',[UserController::class, 'store'])->name('usuario.store');
+Route::get('/users/usuario/{id}', [UserController::class, 'show'])->name('usuario.show');
 
 Route::get('welcome', [OrdemController::class, 'index'])->name('welcome.Ordem');
