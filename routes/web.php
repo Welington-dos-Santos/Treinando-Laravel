@@ -20,6 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::delete('/users/{id}', [UserController::class, 'destroy'])-> name('usuario.destroy');
+Route::put('/users/{id}', [UserController::class, 'update'])-> name('usuario.update');
+Route::get('/users/{id}/edit', [UserController::class, 'edit'])-> name('usuario.edit');
 Route::get('/users/usuario', [UserController::class, 'index'])->name('usuario.index');
 Route::get('/users/create', [UserController::class, 'create'])->name('usuario.create');
 Route::post('/users',[UserController::class, 'store'])->name('usuario.store');
