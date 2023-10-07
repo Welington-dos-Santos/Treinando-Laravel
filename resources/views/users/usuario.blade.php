@@ -6,6 +6,11 @@
     (<a href="{{ route('usuario.create') }}">Cadastrar</a>)
   </h1>
 
+  <form action="{{ route('usuario.index')}}" method="get">
+    <input type="text" name="search" placeholder="Pesquisar">
+    <button>Pesquisar</button>
+  </form>
+
   <ul>
     @foreach ($users as $user)
       <li>
